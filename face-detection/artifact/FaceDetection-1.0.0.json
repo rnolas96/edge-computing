@@ -1,0 +1,22 @@
+{
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "com.clientdevices.FaceDetection",
+  "ComponentVersion": "1.0.0",
+  "ComponentDescription": "Edge Greengrass component",
+  "ComponentPublisher": "RahulManoj",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {
+      "Topic": "clients/1232034091-IoTThing",
+      "RequestQueue": "1232034091-req-queue"
+    }
+  },
+  "Manifests": [
+    {
+      "Platform": { "os": "linux" },
+      "Lifecycle": {
+        "install": "python3 -m pip install --no-cache-dir --user awsiotsdk boto3 numpy==1.24.4 torch==1.9.1+cpu torchvision==0.10.1+cpu torchaudio==0.9.1 --extra-index-url https://download.pytorch.org/whl/cpu tqdm Pillow requests",
+        "run": "python3 -u {artifacts:path}/fd_component.py {configuration:/Topic} {configuration:/RequestQueue}"
+      }
+    }
+  ]
+}
