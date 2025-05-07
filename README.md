@@ -1,4 +1,4 @@
-# edge-computing
+# Edge Computing
 An edge computing project that is built on AWS IoT Greengrass to perform face recognition. 
 
 # Components
